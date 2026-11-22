@@ -1,0 +1,74 @@
+name: Task
+description: 有明確範圍與驗收的工程、文件或流程工作。
+title: "[Task] "
+labels: ["type:task"]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: 背景
+      description: 為什麼要做？連到相關 issue／DEC／ADR。
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 範圍
+      description: 要做什麼？可改哪些路徑？
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: 不在範圍
+      description: 明確排除什麼，避免膨脹。
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 驗收條件
+      description: 可觀察、可測試；不要寫「做得好看」。
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: 依賴與風險
+      description: 需要哪張 issue 先完成？有什麼未知？
+  - type: dropdown
+    id: area
+    attributes:
+      label: 影響區域
+      options:
+        - sim
+        - web／UI
+        - content／balance
+        - art／audio
+        - qa／perf
+        - platform
+        - docs／process
+    validations:
+      required: true
+  - type: dropdown
+    id: size
+    attributes:
+      label: 大小
+      options:
+        - S（一天內）
+        - M（數天）
+        - L（需要拆分）
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 檢查
+      options:
+        - label: 我已確認沒有未解的阻塞決策；若有，已標 needs:decision。
+          required: true
+        - label: 這不涉及 secrets、內網資訊或個資。
+          required: true

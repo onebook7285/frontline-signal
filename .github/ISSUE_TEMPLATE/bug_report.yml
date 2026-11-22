@@ -1,0 +1,63 @@
+name: Bug report
+description: 回報與預期不符的行為。
+title: "[Bug] "
+labels: ["type:bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感謝回報。請先搜尋既有 issue，並移除 logs／截圖中的 secrets、內網資訊與個資。
+        這是設計階段的專案；若還沒有可玩版本，請描述你測試的 build／commit。
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 發生什麼事？
+      description: 實際行為、步驟、頻率。
+      placeholder: 例：在 iPad 上選南路下單，單位出生在北路。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 預期行為
+      description: 你認為應該發生什麼？引用規則或文件更佳。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 重現步驟
+      description: 越具體越好；若有種子、build、規則版本請附上。
+      placeholder: |
+        1. 開新局，種子 ...
+        2. 選 ...
+        3. ...
+    validations:
+      required: true
+  - type: input
+    id: build
+    attributes:
+      label: Build／commit
+      description: Git commit SHA 或版本；沒有可寫「design docs only」。
+  - type: input
+    id: device
+    attributes:
+      label: 裝置與瀏覽器
+      description: 型號、OS、瀏覽器版本、視窗大小、畫質。
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs／截圖
+      description: 請先移除 secrets、內網資訊與個資。
+      render: shell
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 檢查
+      options:
+        - label: 我已搜尋既有 issue。
+          required: true
+        - label: 我已移除 secrets、內網資訊與個資。
+          required: true
+        - label: 這不是安全漏洞（若是，請用 Security Advisory）。
+          required: true

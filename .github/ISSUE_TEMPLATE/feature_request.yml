@@ -1,0 +1,67 @@
+name: Feature request
+description: 提議新功能、規則或體驗改善。
+title: "[Feature] "
+labels: ["type:feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        先確認這是不是產品範圍變更。若會改變 MVP、平台方向、授權或架構，請連到 DEC／ADR，不要只開 feature。
+  - type: textarea
+    id: problem
+    attributes:
+      label: 問題或動機
+      description: 現在哪裡不夠好？誰會受益？
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 提議
+      description: 你希望怎麼做？盡量具體，但不用寫完整規格。
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 考慮過的替代方案
+      description: 有沒有更小的做法？為什麼不選？
+  - type: dropdown
+    id: scope
+    attributes:
+      label: 範圍
+      options:
+        - MVP 候選（P0）
+        - 驗證後（P1）
+        - 不確定，需要討論
+        - 明確不做
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: 影響區域
+      options:
+        - sim
+        - web／UI
+        - content／balance
+        - art／audio
+        - qa／perf
+        - platform
+        - docs／process
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 證據或參考
+      description: 試玩、數據、類似遊戲、文件；沒有也沒關係。
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 檢查
+      options:
+        - label: 我已讀過 product-brief 與 game-design，知道這可能影響範圍。
+          required: true
+        - label: 這不涉及未授權素材、真實仇恨符號或個資。
+          required: true
