@@ -82,7 +82,7 @@ Roblox 不納入 Web MVP，亦不承諾共用 TypeScript 執行碼；可移植�
 | A04 Render/UI | A01, A02 | Three.js 雙尺度場景（遠景棋子／近景低模）、觸控指令、暫停 | 全程觸控無需 hover；跨尺度保持選取狀態；支援 mock `PlayerView` 獨立開發。 |
 | A05 Gameplay | A03, A04 | 情報驅動 AI、教學、結算統計與誘餌揭露時間軸 | AI 會對未確認接觸做出合理調度；結算統計與事件流 100% 一致。 |
 | A06 QA/Perf | A01；A03–05 | 壓測種子（60/120 單位）、真機量測報告、視需要做 PixiJS 2D 對照 | 記錄裝置、瀏覽器、p95 幀間隔與 tick 耗時；不以 CI 數據冒充真機。 |
-| A08 Art/Audio | 無（平行） | `docs/art-direction.md` 落實：探索稿 → 目標畫面＋可重現性說明 → 音效與動畫清單 | 目標畫面在 M1 iPad 實機重現且達效能門檻；對外圖像只用實機擷取。 |
+| A08 Art/Audio | 無（平行） | `docs/art-direction.md` 落實：寫實目標畫面原型 → 實機重現 → 音效與動畫清單 | 目標畫面在 M1 iPad 實機重現且達效能門檻；對外圖像只用實機擷取。 |
 | A07 Platform | Web MVP 後 | Roblox 私有切片與差距報告 | 與 Web fixtures 結果一致、iPad 客戶端可完賽；不擅自公開或付費。 |
 
-CP1 做 A01、A02 全部，A03–A06 的灰盒子集（模擬、2D 灰盒前端、AI v0、試玩分析），以及 A08 的探索稿；細項見 `docs/checkpoints/cp1-intel-greybox.md`。
+CP1 做 A01、A02 全部，A03–A06 的灰盒子集（模擬、2D 灰盒前端、AI v0、試玩分析），以及 A08 的目標畫面原型；細項見 `docs/checkpoints/cp1-intel-greybox.md`。
