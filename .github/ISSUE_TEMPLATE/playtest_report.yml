@@ -1,0 +1,88 @@
+name: Playtest report
+description: 一場試玩的匿名紀錄與觀察。
+title: "[Playtest] YYYY-MM-DD "
+labels: ["type:research", "area:qa"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        不要在 public issue 放姓名、聯絡方式、逐字稿或可識別個資。
+        只寫匿名代碼（P01…）、聚合指標與觀察。原始筆記放私人區。
+  - type: input
+    id: date
+    attributes:
+      label: 日期
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: input
+    id: build
+    attributes:
+      label: Build／commit 與規則版本
+      placeholder: commit SHA、rulesVersion、schemaVersion
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: 模式
+      options:
+        - 即時可暫停
+        - 同步回合
+        - 兩者都測
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: 裝置／瀏覽器
+      placeholder: iPad + Safari、Windows 內顯 + Chrome…
+    validations:
+      required: true
+  - type: input
+    id: sample
+    attributes:
+      label: 樣本
+      placeholder: 6 人；2 人平板為主、2 人玩過 RTS、2 人少玩
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: 聚合指標
+      placeholder: |
+        完成率：
+        中位局長：
+        能正確說明「已確認／未確認接觸」的人數：
+        曾因情報（掃描／新接觸）改變部署的人數：
+        使用假接觸並成功調動 AI 的局數／使用假接觸的局數：
+        平均誤觸（觸控）：
+        節奏偏好（即時可暫停／同步回合）：
+    validations:
+      required: true
+  - type: textarea
+    id: observations
+    attributes:
+      label: 觀察
+      description: 卡住的位置、誤解、可讀性、雪球／逆轉、情緒。
+    validations:
+      required: true
+  - type: textarea
+    id: counterexamples
+    attributes:
+      label: 反例
+      description: 誰沒完成？誰理解錯誤？不要只寫成功案例。
+  - type: textarea
+    id: next
+    attributes:
+      label: 下一步
+      description: 要開哪些 issue／DEC？要改哪些文件？
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 檢查
+      options:
+        - label: 內容已匿名化，沒有個資或可識別引述。
+          required: true
+        - label: 我已取得錄影／錄音同意（若有記錄）。
+          required: true

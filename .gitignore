@@ -1,0 +1,25 @@
+# dependencies & build
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+.vite/
+playwright-report/
+test-results/
+
+# env & secrets — never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# private material — keep outside this public repo
+private/
+playtest-raw/
+
+# editors & OS
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
